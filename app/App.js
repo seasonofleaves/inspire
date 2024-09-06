@@ -1,13 +1,16 @@
 import { AuthController } from './controllers/AuthController.js';
 import { router } from './router-config.js';
+import { ToDoController } from './controllers/ToDoController.js';
+
 const USE_ROUTER = false
 
 class App {
 
   AuthController = new AuthController()
-  
+  ToDoController = new ToDoController()
+
   constructor() {
-    if(USE_ROUTER){
+    if (USE_ROUTER) {
       this.router = router
       this.router.init(this)
     }
