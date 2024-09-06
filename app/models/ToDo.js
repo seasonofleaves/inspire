@@ -6,5 +6,11 @@ export class ToDo {
     this.completed = data.completed || false
   }
 
-
+  get toDoHTMLTemplate() {
+    return `
+   <input onchange="" type="checkbox">
+      <h5>${this.description}</h5>
+      <p>Delete</p>
+  `
+  }
 }

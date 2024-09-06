@@ -7,8 +7,15 @@ import { getFormData } from "../utils/FormHandler.js"
 
 export class ToDoController {
   constructor() {
-    console.log('TODO Controller is working')
     AppState.on('user', this.getToDo)
+    AppState.on('todos', this.drawToDo)
+  }
+
+  drawToDo() {
+    const todo = AppState.todos
+    let toDoHTML = ''
+    todo.forEach(todo => toDoHTML += todo.toDoHTMLTemplate)
+    setHTML('todos', toDoHTML)
   }
 
   async createToDo() {

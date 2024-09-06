@@ -39,19 +39,20 @@
   </header>
 
   <!-- SECTION -->
-  <main>
+  <main class="container">
+    <section class="row">
 
-    <form onsubmit="app.ToDoController.createToDo()">
-      <input type="text" name="description" id="description" minlength="3" maxlength="20" placeholder="Add ToDo"
-        required>
-      <button class="selectable" type="submit">+</button>
-    </form>
 
-    <div onclick="">
-      <input onchange="" type="checkbox">
-      <h5>ToDo</h5>
-      <p>Delete</p>
-    </div>
+      <form onsubmit="app.ToDoController.createToDo()">
+        <input type="text" name="description" id="description" minlength="3" maxlength="20" placeholder="Add ToDo"
+          required>
+        <button class="selectable" type="submit">+</button>
+      </form>
+
+      <div id="todos">
+        <!-- To Do List Here -->
+      </div>
+    </section>
   </main>
 
   <!-- SECTION -->
