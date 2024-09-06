@@ -16,6 +16,8 @@ export class ToDoController {
     let toDoHTML = ''
     todo.forEach(todo => toDoHTML += todo.toDoHTMLTemplate)
     setHTML('todos', toDoHTML)
+    const completedToDo = todo.filter(todo => todo.completed)
+    setHTML('todo-count', `${completedToDo.length}/${todo.length}`)
   }
 
   async createToDo() {
@@ -41,4 +43,24 @@ export class ToDoController {
     }
   }
 
+  async deleteToDo(toDoId) {
+    try {
+      const wantsToDelete = await Pop.confirm("Are you sure you want to delete this To Do?")
+      if (!wantsToDelete) return
+      await toDoService.deleteToDo(toDoId)
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
+  }
+
+  async completeToDo(toDoId) {
+    try {
+      await toDoService.completeToDo(toDoId)
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
+  }
 }

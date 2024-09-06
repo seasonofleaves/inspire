@@ -41,16 +41,19 @@
   <!-- SECTION -->
   <main class="container">
     <section class="row">
+      <div class="col-4">
 
 
-      <form onsubmit="app.ToDoController.createToDo()">
-        <input type="text" name="description" id="description" minlength="3" maxlength="20" placeholder="Add ToDo"
-          required>
-        <button class="selectable" type="submit">+</button>
-      </form>
+        <form onsubmit="app.ToDoController.createToDo()">
+          <input type="text" name="description" id="description" minlength="3" maxlength="20" placeholder="Add ToDo"
+            required>
+          <button class="selectable mdi mdi-plus" type="submit"></button>
+        </form>
 
-      <div id="todos">
-        <!-- To Do List Here -->
+        <p>Completed To Dos <span id="todo-count">/</span></p>
+        <div id="todos">
+          <!-- To Do List Here -->
+        </div>
       </div>
     </section>
   </main>
