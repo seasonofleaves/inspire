@@ -16,6 +16,7 @@ export class ToDoController {
     let toDoHTML = ''
     todo.forEach(todo => toDoHTML += todo.toDoHTMLTemplate)
     setHTML('todos', toDoHTML)
+    // FIXME make sure we are filtering the uncompleted todos here
     const completedToDo = todo.filter(todo => todo.completed)
     setHTML('todo-count', `${completedToDo.length}/${todo.length}`)
   }
